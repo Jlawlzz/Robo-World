@@ -1,10 +1,123 @@
 ---
 robots:
-- name: dog
+- id: 4
+  name: THE BEEZ NEEZ
+  city: ''
+  state: ''
+  avatar: https://robohash.org/THE BEEZ NEEZ
+  birthdate: ''
+  date hired: ''
+  department: ''
+- id: 5
+  name: dog
   city: ''
   state: ''
   avatar: https://robohash.org/dog
   birthdate: ''
   date hired: ''
   department: ''
-total: 1
+- id: 6
+  name: Bg
+  city: ''
+  state: ''
+  avatar: https://robohash.org/Bg
+  birthdate: ''
+  date hired: ''
+  department: ''
+- id: 7
+  name: bllo
+  city: ''
+  state: ''
+  avatar: https://robohash.org/bllo
+  birthdate: ''
+  date hired: ''
+  department: ''
+- id: 8
+  name: f
+  city: ''
+  state: ''
+  avatar: https://robohash.org/f
+  birthdate: ''
+  date hired: ''
+  department: ''
+- id: 9
+  name: a
+  city: ''
+  state: ''
+  avatar: https://robohash.org/a
+  birthdate: ''
+  date hired: ''
+  department: ''
+- id: 10
+  name: b
+  city: ''
+  state: ''
+  avatar: https://robohash.org/b
+  birthdate: ''
+  date hired: ''
+  department: ''
+- id: 11
+  name: a
+  city: ''
+  state: ''
+  avatar: https://robohash.org/a
+  birthdate: ''
+  date hired: ''
+  department: ''
+- id: 12
+  name: guy
+  city: ''
+  state: ''
+  avatar: https://robohash.org/guy
+  birthdate: ''
+  date hired: ''
+  department: ''
+- id: 13
+  name: yolo
+  city: ''
+  state: ''
+  avatar: https://robohash.org/yolo
+  birthdate: ''
+  date hired: ''
+  department: ''
+- id: 14
+  name: gokd
+  city: ''
+  state: ''
+  avatar: https://robohash.org/gokd
+  birthdate: ''
+  date hired: ''
+  department: ''
+- id: 15
+  name: aaaa
+  city: ''
+  state: ''
+  avatar: https://robohash.org/aaaa
+  birthdate: ''
+  date hired: ''
+  department: ''
+- id: 16
+  name: jj
+  city: ''
+  state: ''
+  avatar: https://robohash.org/jj
+  birthdate: ''
+  date hired: ''
+  department: ''
+- id: 17
+  name: fa
+  city: ''
+  state: ''
+  avatar: https://robohash.org/fa
+  birthdate: ''
+  date hired: ''
+  department: ''
+- id: 18
+  name: fa
+  city: ''
+  state: ''
+  avatar: https://robohash.org/fa
+  birthdate: ''
+  date hired: ''
+  department: ''
+total: 18

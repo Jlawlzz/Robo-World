@@ -8,6 +8,10 @@ h5 {
   text-align: center;
 }
 
+.robo-name {
+  text-align: center;
+}
+
 .nav-wrapper {
   padding-bottom: 90px;
 }
@@ -19,6 +23,6 @@ h5 {
   padding-left: 12%;
 }
 
-.robot-img {
-  width: 10px;
+.center-btn {
+  text-align: center
 }

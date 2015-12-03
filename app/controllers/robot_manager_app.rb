@@ -1,4 +1,3 @@
-require 'models/robot_manager'
 
 class RobotManagerApp < Sinatra::Base
   set :root, File.expand_path("..", __dir__)
@@ -26,23 +25,23 @@ class RobotManagerApp < Sinatra::Base
   end
 
 # read
-  get '/robots/:name' do |name|
-   @robot = RobotManager.find(name)
+  get '/robots/:id' do |id|
+   @robot = RobotManager.find(id.to_i)
    erb :show
   end
 
-  get '/robots/:name/edit' do |name|
-    @robot = RobotManager.find(name)
+  get '/robots/:id/edit' do |id|
+    @robot = RobotManager.find(id.to_i)
     erb :edit
   end
 
-  put '/robots/:name' do |name|
-    RobotManager.update(name, params[:robot])
-    redirect "/robots/#{name}"
+  put '/robots/:id' do |id|
+    RobotManager.update(id.to_i, params[:robot])
+    redirect "/robots/#{id}"
   end
 
-  delete '/robots/:name' do |name|
-   RobotManager.delete(name)
+  delete '/robots/:id' do |id|
+   RobotManager.delete(id.to_i)
    redirect '/robots'
   end
 
