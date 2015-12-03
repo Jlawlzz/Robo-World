@@ -1,0 +1,10 @@
+---
+robots:
+- name: dog
+  city: ''
+  state: ''
+  avatar: https://robohash.org/dog
+  birthdate: ''
+  date hired: ''
+  department: ''
+total: 1

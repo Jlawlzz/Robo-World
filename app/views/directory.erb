@@ -1,0 +1,36 @@
+<h1>Robot Directory</h1>
+
+<img src="http://cdn-www.cracked.com/phpimages/article/6/0/1/3601.jpg" alt="ROBOT DINOSOURS" class="img-rectangle">
+
+ <% @colors = ["yellow", "orange", "red", "indigo", "blue", "indigo"]
+    @robots.each_with_index do |robot, index|
+    @colors.rotate! if (index) % 5 == 0
+    %>
+
+  <div class="row">
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="robot-img">
+              <img src= "https://robohash.org/<%=robot.name%>" width= 250px></br>
+              <span class="robo-name"><%= robot.name %></span>
+            </div>
+            <div class="card-content">
+              <ul>
+                <li>Department: <%= robot.department %></li>
+                <li>City: <%= robot.city %></li>
+                <li>State: <%= robot.state %></li>
+                <li>Birthdate: <%= robot.birthdate %></li>
+            </div>
+            <div class="card-action">
+              <a href="/robots/<%=robot.name %>/edit">Edit</a>
+              <form action="/robots/<%= robot.name %>" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <input type="submit" value="Delete">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+<% end %>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+      <link href= "https://fonts.googleapis.com/css?family=Lobster" rel='stylesheet' type='text/css'>
+      <link href= "/css/application.css" rel='stylesheet'>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+      <nav>
+        <div class="nav-wrapper #8bc34a light-green">
+          <a href="/" class="nav-title">RoboSlaves</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/robots" class="nav-item">Robots</a></li>
+            <li><a href="/robots/new" class='nav-item'>New Robot</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class='center-align'>
+        <div class="">
+          <%= yield %>
+        </div>
+      <!--Import jQuery before materialize.js-->
+      <script type="/text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="/text/javascript" src="/js/materialize.min.js"></script>
+    </body>
+  </html>
