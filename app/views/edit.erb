@@ -1,17 +1,19 @@
-<form action="/robots/<%= @robot.id %>" method="post">
-  <input type="hidden" name = "_method" value="put">
-  <h3>Edit the robot slave:</h3>
-  <h5>Name:</h5>
-  <input type='test' name='robot[name]' value="<%= @robot.name %>"/></textarea><br/>
-  <h5>Department:<h5/>
-  <input type='test' name='robot[department]' value="<%= @robot.department %>"/></textarea><br/>
-  <h5>Date Hired:<h5/>
-  <input type='test' name='robot[datehired]' value="<%= @robot.date_hired %>"/></textarea><br/>
-  <h5>Birthdate:<h5/>
-  <input type='test' name='robot[birthdate]' value="<%= @robot.birthdate %>"/></textarea><br/>
-  <h5>City:<h5/>
-  <input type='test' name='robot[city]' value="<%= @robot.city %>"/></textarea><br/>
-  <h5>State:<h5/>
-  <input type='test' name='robot[state]' value="<%= @robot.state %>"/></textarea><br/><br/>
-  <input value="submit" type='submit'/>
-</form>
+<div id="edit-form">
+  <form action="/robots/<%= @robot.id %>" method="post">
+    <input type="hidden" name = "_method" value="put">
+    <h1>Edit the robot slave:</h1>
+    <h5>Name:<h5/>
+    <input type='test' name='robot[name]' value="<%= @robot.name %>"/></textarea><br/>
+    <h5>Department:<h5/>
+    <input type='test' name='robot[department]' value="<%= @robot.department %>"/></textarea><br/>
+    <h5>Date Hired:<h5/>
+    <input type='test' name='robot[date_hired]' value="<%= @robot.date_hired %>"/></textarea><br/>
+    <h5>Birthdate:<h5/>
+    <input type='test' name='robot[birthdate]' value="<%= @robot.birthdate %>"/></textarea><br/>
+    <h5>City:<h5/>
+    <input type='test' name='robot[city]' value="<%= @robot.city %>"/></textarea><br/>
+    <h5>State:<h5/>
+    <input type='test' name='robot[state]' value="<%= @robot.state %>"/></textarea><br/><br/>
+    <input value="submit" type='submit' class="waves-effect waves-light btn" />
+  </form>
+</div>

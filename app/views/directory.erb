@@ -3,7 +3,7 @@
 <img src="http://cdn-www.cracked.com/phpimages/article/6/0/1/3601.jpg" alt="ROBOT DINOSOURS" class="img-rectangle">
 
 <div class="row">
- <% @colors = ["yellow", "orange", "red", "indigo", "blue", "indigo"]
+ <% @colors = ["yellow", "orange", "red", "indigo", "blue", "indigo", "green"]
     @robots.each_with_index do |robot, index|
     @colors.rotate! if (index) % 4 == 0
     %>
@@ -14,7 +14,7 @@
               <img src= "https://robohash.org/<%=robot.name%>" width= 250px></br>
             </div>
             <div class="card-content">
-              <h5><span class="robo-name"><%= robot.name %></span></h5>
+              <h4><span class="robo-name"><%= robot.name %></span></h4>
               <ul>
                 <li>Department: <%= robot.department %></li>
                 <li>City: <%= robot.city %></li>
@@ -23,9 +23,9 @@
             </div>
             <div class="card-action">
               <a href="/robots/<%=robot.id %>/edit" style=" margin-right:0px" class="waves-effect waves-light btn">Edit</a></div>
-              <form action="/robots/<%= robot.id %>" method="post">
+              <form action="/robots/<%= robot.id %>" method="post" padding-bottom=20px>
                 <input type="hidden" name="_method" value="delete">
-                <input type="submit" value="Delete" class="waves-effect waves-light btn">
+                <input type="submit" value="Delete" class="waves-effect waves-light btn" margin-bottom=20px>
               </form>
             </div>
         </div>

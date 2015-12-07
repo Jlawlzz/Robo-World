@@ -1,3 +1,4 @@
+require 'pony'
 
 class RobotManagerApp < Sinatra::Base
   set :root, File.expand_path("..", __dir__)
@@ -20,7 +21,12 @@ class RobotManagerApp < Sinatra::Base
 
 # create (second half)
   post '/robots' do
-    RobotManager.create(params[:robot])
+    id = RobotManager.create(params[:robot])
+    @robot = RobotManager.find(id.to_i)
+    Pony.mail({ :to => 'jordan.lawler@colorado.edu',
+              :from => 'jordanalawler@gmail.com',
+              :subject => 'You have created a new ROBO-SLAVE',
+              :body => erb(:email, :layout => false)})
     redirect '/robots'
   end
 

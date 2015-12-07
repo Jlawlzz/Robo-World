@@ -1,4 +1,3 @@
-require 'yaml/store'
 
 class RobotManager
 
@@ -11,63 +10,30 @@ class RobotManager
   end
 
   def self.create(robot)
-    database.transaction do
-      database['robots'] ||= []
-      database['total'] ||= 0
-      database['total'] += 1
-      database['robots'] << { "id" => database['total'],
-                              "name" => robot[:name],
-                              "city" => robot[:city],
-                              "state" => robot[:state],
-                              "avatar" => "https://robohash.org/#{robot['name']}",
-                              "birthdate" => robot[:birthdate],
-                              "date hired" => robot[:datehired],
-                              "department" => robot[:department]}
-    end
-  end
-
-  def self.raw_robots
-     database.transaction do
-       database['robots'] || []
-     end
+    database.from(:robots).insert(name: robot[:name],
+                                                department: robot[:department],
+                                                city: robot[:city],
+                                                state: robot[:state],
+                                                date_hired: robot[:date_hired],
+                                                birthdate: robot[:birthdate],
+                                                avatar: "http//robohash.org#{robot[:name]}")
   end
 
   def self.all
-     raw_robots.map { |data| Robot.new(data) }
+    raw_robots = database.from(:robots).to_a
+    raw_robots.map { |data| Robot.new(data) }
   end
 
-  def self.raw_robot(id)
-   raw_robots.find { |robot| robot["id"] == id}
- end
-
   def self.find(id)
-    Robot.new(raw_robot(id))
+    data = database.from(:robots).where(id: id).to_a.first
+    Robot.new(data)
   end
 
   def self.update(id, data)
-    database.transaction do
-      target = database['robots'].find { |data| data["id"] == id }
-      target["name"] = data[:name]
-      target["department"] = data[:department]
-      target["birthdate"] = data[:birthdate]
-      target["date hired"] = data[:date_hired]
-      target["city"] = data[:city]
-      target["state"] = data[:state]
-      target["avatar"] = "robohash.org/#{data[:name]}"
-    end
+    database.from(:robots).where(id: id).update(data)
   end
 
   def self.delete(id)
-    database.transaction do
-      database['robots'].delete_if { |robot| robot["id"] == id }
-    end
+    database.from(:robots).where(:id=>id).delete
   end
-
-  def self.delete_all
-    database.transaction do
-      database['robots'] = []
-      database['total'] = 0
-    end
-  end
-
 end
